@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CSS Position Examples</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      padding: 30px;
+      background: #f4f6f8;
+    }
+
+    h1 {
+      margin-bottom: 30px;
+    }
+
+    .section {
+      position: relative;
+      margin-bottom: 40px;
+      padding: 20px;
+      height: 220px;
+      border: 2px dashed #bbb;
+      background: white;
+    }
+
+    .box {
+      width: 180px;
+      padding: 15px;
+      color: white;
+      border-radius: 10px;
+      font-weight: bold;
+    }
+
+    .static-box {
+      position: static;
+      background: #3b82f6;
+    }
+
+    .relative-box {
+      position: relative;
+      top: 20px;
+      left: 30px;
+      background: #10b981;
+    }
+
+    .absolute-parent {
+      position: relative;
+    }
+
+    .absolute-box {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: #f59e0b;
+    }
+
+    .fixed-box {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #ef4444;
+      z-index: 1000;
+    }
+
+    .sticky-wrapper {
+      height: 300px;
+      overflow: auto;
+      border: 2px solid #ddd;
+      background: #fff;
+      padding: 10px;
+    }
+
+    .sticky-box {
+      position: sticky;
+      top: 0;
+      background: #8b5cf6;
+      padding: 15px;
+      border-radius: 10px;
+      color: white;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .content {
+      height: 500px;
+      background: linear-gradient(#f9fafb, #e5e7eb);
+      padding: 10px;
+      border-radius: 8px;
+    }
+
+    .label {
+      font-size: 13px;
+      margin-top: 8px;
+      color: #222;
+      font-weight: normal;
+      background: rgba(255,255,255,0.8);
+      padding: 6px 8px;
+      border-radius: 6px;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>CSS Position Examples</h1>
+
+  <!-- Static -->
+  <div class="section">
+    <div class="box static-box">
+      Static
+      <div class="label">position: static;</div>
+    </div>
+  </div>
+
+  <!-- Relative -->
+  <div class="section">
+    <div class="box relative-box">
+      Relative
+      <div class="label">position: relative; top: 20px; left: 30px;</div>
+    </div>
+  </div>
+
+  <!-- Absolute -->
+  <div class="section absolute-parent">
+    <div class="box absolute-box">
+      Absolute
+      <div class="label">position: absolute; top: 20px; right: 20px;</div>
+    </div>
+  </div>
+
+  <!-- Sticky -->
+  <div class="sticky-wrapper">
+    <div class="sticky-box">
+      Sticky
+      <div class="label">position: sticky; top: 0;</div>
+    </div>
+    <div class="content">
+      Scroll down to see sticky effect
+    </div>
+  </div>
+
+  <!-- Fixed -->
+  <div class="box fixed-box">
+    Fixed
+    <div class="label">position: fixed; bottom: 20px; right: 20px;</div>
+  </div>
+
+</body>
+</html>
