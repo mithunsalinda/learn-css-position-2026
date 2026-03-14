@@ -3,153 +3,151 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CSS Position Examples</title>
+  <title>CSS Position Table</title>
   <style>
     * {
       box-sizing: border-box;
-      font-family: Arial, sans-serif;
     }
 
     body {
       margin: 0;
+      padding: 40px 20px;
+      font-family: Arial, sans-serif;
+      background: #f4f7fb;
+      color: #222;
+    }
+
+    .wrapper {
+      max-width: 900px;
+      margin: 0 auto;
+      background: white;
       padding: 30px;
-      background: #f4f6f8;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
     }
 
     h1 {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      text-align: center;
+      color: #666;
       margin-bottom: 30px;
     }
 
-    .section {
-      position: relative;
-      margin-bottom: 40px;
-      padding: 20px;
-      height: 220px;
-      border: 2px dashed #bbb;
-      background: white;
+    .table-box {
+      overflow-x: auto;
     }
 
-    .box {
-      width: 180px;
-      padding: 15px;
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 700px;
+    }
+
+    th,
+    td {
+      border: 1px solid #ddd;
+      padding: 14px 16px;
+      text-align: left;
+    }
+
+    th {
+      background: #1d72d8;
       color: white;
-      border-radius: 10px;
-      font-weight: bold;
     }
 
-    .static-box {
-      position: static;
-      background: #3b82f6;
+    tr:nth-child(even) {
+      background: #f9fbff;
     }
 
-    .relative-box {
-      position: relative;
-      top: 20px;
-      left: 30px;
-      background: #10b981;
+    tr:hover {
+      background: #eef5ff;
     }
 
-    .absolute-parent {
-      position: relative;
-    }
-
-    .absolute-box {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      background: #f59e0b;
-    }
-
-    .fixed-box {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: #ef4444;
-      z-index: 1000;
-    }
-
-    .sticky-wrapper {
-      height: 300px;
-      overflow: auto;
-      border: 2px solid #ddd;
-      background: #fff;
-      padding: 10px;
-    }
-
-    .sticky-box {
-      position: sticky;
-      top: 0;
-      background: #8b5cf6;
-      padding: 15px;
-      border-radius: 10px;
-      color: white;
-      font-weight: bold;
-      margin-bottom: 20px;
-    }
-
-    .content {
-      height: 500px;
-      background: linear-gradient(#f9fafb, #e5e7eb);
-      padding: 10px;
-      border-radius: 8px;
-    }
-
-    .label {
-      font-size: 13px;
-      margin-top: 8px;
-      color: #222;
-      font-weight: normal;
-      background: rgba(255,255,255,0.8);
-      padding: 6px 8px;
-      border-radius: 6px;
+    .tag {
       display: inline-block;
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: bold;
+      color: white;
+    }
+
+    .static { background: #6b7280; }
+    .relative { background: #2563eb; }
+    .absolute { background: #dc2626; }
+    .fixed { background: #059669; }
+    .sticky { background: #d97706; }
+
+    .note {
+      margin-top: 24px;
+      padding: 16px;
+      background: #fff8e7;
+      border-left: 4px solid #f59e0b;
+      border-radius: 8px;
+      color: #444;
+      line-height: 1.6;
+    }
+
+    code {
+      background: #f1f5f9;
+      padding: 2px 6px;
+      border-radius: 6px;
     }
   </style>
 </head>
 <body>
+  <div class="wrapper">
+    <h1>CSS Position Summary</h1>
+    <p class="subtitle">Simple table for beginners</p>
 
-  <h1>CSS Position Examples</h1>
+    <div class="table-box">
+      <table>
+        <thead>
+          <tr>
+            <th>Position</th>
+            <th>Meaning</th>
+            <th>Simple Explanation</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="tag static">static</span></td>
+            <td>Default</td>
+            <td>The normal default position of an element.</td>
+          </tr>
+          <tr>
+            <td><span class="tag relative">relative</span></td>
+            <td>Move from original place</td>
+            <td>The element moves from its original position, but the original space stays reserved.</td>
+          </tr>
+          <tr>
+            <td><span class="tag absolute">absolute</span></td>
+            <td>Position inside parent</td>
+            <td>The element is placed exactly inside its nearest positioned parent.</td>
+          </tr>
+          <tr>
+            <td><span class="tag fixed">fixed</span></td>
+            <td>Stuck to screen</td>
+            <td>The element stays fixed on the screen even when the page scrolls.</td>
+          </tr>
+          <tr>
+            <td><span class="tag sticky">sticky</span></td>
+            <td>Sticks on scroll</td>
+            <td>The element scrolls normally at first, then sticks when it reaches a set position.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 
-  <!-- Static -->
-  <div class="section">
-    <div class="box static-box">
-      Static
-      <div class="label">position: static;</div>
+    <div class="note">
+      <strong>Quick tip:</strong> 
+      <code>relative</code> is often used as the parent for an 
+      <code>absolute</code> child.
     </div>
   </div>
-
-  <!-- Relative -->
-  <div class="section">
-    <div class="box relative-box">
-      Relative
-      <div class="label">position: relative; top: 20px; left: 30px;</div>
-    </div>
-  </div>
-
-  <!-- Absolute -->
-  <div class="section absolute-parent">
-    <div class="box absolute-box">
-      Absolute
-      <div class="label">position: absolute; top: 20px; right: 20px;</div>
-    </div>
-  </div>
-
-  <!-- Sticky -->
-  <div class="sticky-wrapper">
-    <div class="sticky-box">
-      Sticky
-      <div class="label">position: sticky; top: 0;</div>
-    </div>
-    <div class="content">
-      Scroll down to see sticky effect
-    </div>
-  </div>
-
-  <!-- Fixed -->
-  <div class="box fixed-box">
-    Fixed
-    <div class="label">position: fixed; bottom: 20px; right: 20px;</div>
-  </div>
-
 </body>
 </html>

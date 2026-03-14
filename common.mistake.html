@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Common CSS Position Mistakes</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #eef4ff, #f8fbff);
+      color: #1f2937;
+      padding: 50px 20px;
+    }
+
+    .container {
+      max-width: 1150px;
+      margin: 0 auto;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .header h1 {
+      font-size: 38px;
+      margin-bottom: 12px;
+      color: #111827;
+    }
+
+    .header p {
+      font-size: 17px;
+      color: #6b7280;
+      max-width: 760px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
+    .card {
+      position: relative;
+      background: white;
+      border-radius: 20px;
+      padding: 24px;
+      overflow: hidden;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+      border: 1px solid #e5e7eb;
+    }
+
+    .card:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.14);
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 5px;
+      background: linear-gradient(90deg, #2563eb, #7c3aed);
+      transition: left 0.4s ease;
+    }
+
+    .card:hover::before {
+      left: 0;
+    }
+
+    .number {
+      display: inline-block;
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: bold;
+      color: white;
+      margin-bottom: 18px;
+    }
+
+    .blue {
+      background: #2563eb;
+    }
+
+    .orange {
+      background: #f59e0b;
+    }
+
+    .red {
+      background: #dc2626;
+    }
+
+    .card h2 {
+      font-size: 22px;
+      margin-bottom: 12px;
+      color: #111827;
+    }
+
+    .card p {
+      color: #4b5563;
+      line-height: 1.7;
+      font-size: 15px;
+      margin-bottom: 14px;
+    }
+
+    .check {
+      margin-top: 12px;
+      padding: 14px 16px;
+      background: #f8fafc;
+      border-left: 4px solid #2563eb;
+      border-radius: 10px;
+      font-size: 14px;
+      color: #374151;
+      line-height: 1.6;
+    }
+
+    .footer-note {
+      margin-top: 35px;
+      background: white;
+      padding: 18px 20px;
+      border-radius: 14px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+      color: #374151;
+      line-height: 1.7;
+      border: 1px solid #e5e7eb;
+    }
+
+    code {
+      background: #eef2ff;
+      color: #1d4ed8;
+      padding: 2px 6px;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 600px) {
+      .header h1 {
+        font-size: 28px;
+      }
+
+      .header p {
+        font-size: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Common CSS Position Mistakes</h1>
+      <p>
+        Now let’s quickly look at some common mistakes beginners make with CSS position.
+        Hover over the cards to see a small animation.
+      </p>
+    </div>
+
+    <div class="cards">
+      <div class="card">
+        <span class="number blue">Mistake number 1</span>
+        <h2>Using absolute without a relative parent</h2>
+        <p>
+          When you use <code>position: absolute;</code> without setting the parent
+          to <code>position: relative;</code>, the element may move to an unexpected place.
+        </p>
+        <div class="check">
+          Check whether the parent element has <code>position: relative;</code>.
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="number orange">Mistake number 2</span>
+        <h2>Using sticky without top</h2>
+        <p>
+          When you use <code>position: sticky;</code> without a value like
+          <code>top: 0;</code>, sticky usually does not work the way you expect.
+        </p>
+        <div class="check">
+          Always add a sticky offset like <code>top: 0;</code> or <code>top: 20px;</code>.
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="number red">Mistake number 3</span>
+        <h2>Using top, left, right, or bottom on static</h2>
+        <p>
+          Static is the default position. So properties like <code>top</code>,
+          <code>left</code>, <code>right</code>, and <code>bottom</code> do not work
+          on a static element.
+        </p>
+        <div class="check">
+          If you want those properties to work, change the element to
+          <code>relative</code>, <code>absolute</code>, <code>fixed</code>, or <code>sticky</code>.
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-note">
+      <strong>Final tip:</strong> If your positioning looks broken, these are the first three
+      things you should check.
+    </div>
+  </div>
+</body>
+</html>

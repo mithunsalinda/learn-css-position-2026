@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Position Fixed Examples</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f7fb;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    /* Example 1 - Fixed Navbar */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: #1d72d8;
+      color: white;
+      padding: 16px 24px;
+      font-size: 20px;
+      font-weight: bold;
+      z-index: 1000;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .page {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 100px 20px 80px;
+    }
+
+    .section {
+      background: white;
+      margin-bottom: 24px;
+      padding: 24px;
+      border-radius: 16px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    }
+
+    .section h2 {
+      margin-bottom: 12px;
+      color: #111;
+    }
+
+    .section p {
+      color: #555;
+      margin-bottom: 12px;
+    }
+
+    /* Example 2 - Fixed Chat Button */
+    .chat-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: #25d366;
+      color: white;
+      font-size: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+      z-index: 1000;
+    }
+
+    /* Example 3 - Fixed Back To Top Button */
+    .top-btn {
+      position: fixed;
+      bottom: 95px;
+      right: 20px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: #ff9800;
+      color: white;
+      text-decoration: none;
+      font-size: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      z-index: 1000;
+    }
+
+    .note {
+      background: #fff8e1;
+      border-left: 4px solid #ff9800;
+      padding: 16px;
+      border-radius: 10px;
+      margin-bottom: 24px;
+    }
+  </style>
+</head>
+<body id="top">
+  <!-- Example 1 -->
+  <div class="navbar">My Fixed Navbar</div>
+
+  <div class="page">
+    <div class="note">
+      <strong>Scroll down</strong> to see how the fixed elements stay in the same place on the screen.
+    </div>
+
+    <div class="section">
+      <h2>Example 1: Fixed Navbar</h2>
+      <p>
+        This navbar uses <code>position: fixed;</code>. It stays at the top of the screen even when you scroll.
+      </p>
+      <p>
+        Fixed elements stay in the same place relative to the browser window.
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>Example 2: Fixed Chat Button</h2>
+      <p>
+        This is a chat button placed at the bottom-right corner of the screen.
+      </p>
+      <p>
+        Even when the page scrolls, the button stays there.
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>Example 3: Fixed Back To Top Button</h2>
+      <p>
+        This orange button is also fixed. It stays above the chat button.
+      </p>
+      <p>
+        When clicked, it takes the user back to the top of the page.
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>More Content</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit, quidem.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit, quidem.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit, quidem.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit, quidem.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit, quidem.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit, quidem.</p>
+    </div>
+
+    <div class="section">
+      <h2>Keep Scrolling</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi, recusandae.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi, recusandae.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi, recusandae.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi, recusandae.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi, recusandae.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi, recusandae.</p>
+    </div>
+
+    <div class="section">
+      <h2>Last Section</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis, laboriosam.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis, laboriosam.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis, laboriosam.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis, laboriosam.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis, laboriosam.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis, laboriosam.</p>
+    </div>
+  </div>
+
+  <!-- Example 3 -->
+  <a href="#top" class="top-btn">↑</a>
+
+  <!-- Example 2 -->
+  <div class="chat-btn">💬</div>
+</body>
+</html>

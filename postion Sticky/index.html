@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Position Sticky Practical Examples</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f7fb;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    .hero {
+      min-height: 60vh;
+      background: linear-gradient(135deg, #0f172a, #1d4ed8);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .hero-content {
+      max-width: 800px;
+    }
+
+    .hero h1 {
+      font-size: 42px;
+      margin-bottom: 16px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      opacity: 0.95;
+    }
+
+    .wrapper {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px 80px;
+    }
+
+    .intro {
+      background: white;
+      border-radius: 20px;
+      padding: 24px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      margin-bottom: 40px;
+    }
+
+    .intro h2 {
+      margin-bottom: 12px;
+      font-size: 28px;
+    }
+
+    .intro p {
+      color: #555;
+    }
+
+    /* Example 1 */
+    .example-title {
+      font-size: 30px;
+      margin-bottom: 20px;
+    }
+
+    .sections {
+      display: grid;
+      gap: 24px;
+      margin-bottom: 70px;
+    }
+
+    .content-section {
+      background: white;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.07);
+      border: 1px solid #e5e7eb;
+    }
+
+    .sticky-header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      padding: 16px 20px;
+      font-size: 20px;
+      font-weight: bold;
+      color: white;
+      backdrop-filter: blur(8px);
+    }
+
+    .header-1 {
+      background: rgba(37, 99, 235, 0.92);
+    }
+
+    .header-2 {
+      background: rgba(5, 150, 105, 0.92);
+    }
+
+    .header-3 {
+      background: rgba(220, 38, 38, 0.92);
+    }
+
+    .section-body {
+      padding: 22px;
+    }
+
+    .section-body p {
+      margin-bottom: 16px;
+      color: #555;
+    }
+
+    /* Example 2 */
+    .layout {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 28px;
+      align-items: start;
+    }
+
+    .sidebar {
+      position: sticky;
+      top: 20px;
+      background: white;
+      border-radius: 18px;
+      padding: 20px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.07);
+      border: 1px solid #e5e7eb;
+    }
+
+    .sidebar h3 {
+      margin-bottom: 14px;
+      font-size: 20px;
+    }
+
+    .sidebar a {
+      display: block;
+      text-decoration: none;
+      color: #1d4ed8;
+      padding: 10px 12px;
+      border-radius: 10px;
+      margin-bottom: 8px;
+      background: #eff6ff;
+      transition: 0.25s;
+    }
+
+    .sidebar a:hover {
+      background: #dbeafe;
+    }
+
+    .article {
+      display: grid;
+      gap: 20px;
+    }
+
+    .article-card {
+      background: white;
+      border-radius: 18px;
+      padding: 24px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.07);
+      border: 1px solid #e5e7eb;
+    }
+
+    .article-card h3 {
+      margin-bottom: 12px;
+      font-size: 24px;
+    }
+
+    .article-card p {
+      color: #555;
+      margin-bottom: 14px;
+    }
+
+    .footer-space {
+      height: 120px;
+    }
+
+    @media (max-width: 900px) {
+      .layout {
+        grid-template-columns: 1fr;
+      }
+
+      .sidebar {
+        top: 0;
+      }
+
+      .hero h1 {
+        font-size: 32px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Position Sticky Practical Examples</h1>
+      <p>
+        Scroll down and watch how sticky elements stay visible until their parent section ends.
+      </p>
+    </div>
+  </section>
+
+  <div class="wrapper">
+    <div class="intro">
+      <h2>What is position: sticky?</h2>
+      <p>
+        Sticky behaves like relative at first, but when you scroll to a certain point,
+        it sticks in place like fixed. It only sticks inside its own parent container.
+      </p>
+    </div>
+
+    <!-- Example 1 -->
+    <h2 class="example-title">Example 1: Sticky Section Headers</h2>
+
+    <div class="sections">
+      <div class="content-section">
+        <div class="sticky-header header-1">HTML Basics</div>
+        <div class="section-body">
+          <p>Sticky section headers are often used in blogs, docs, article pages, and long category lists.</p>
+          <p>When you scroll this section, the title stays at the top until the next section pushes it away.</p>
+          <p>That makes it easier for users to know which section they are currently reading.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, magni.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, magni.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, magni.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, magni.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, magni.</p>
+        </div>
+      </div>
+
+      <div class="content-section">
+        <div class="sticky-header header-2">CSS Layout</div>
+        <div class="section-body">
+          <p>This pattern is common in documentation pages and educational websites.</p>
+          <p>Each section keeps its own heading visible while the user reads the content.</p>
+          <p>Sticky is perfect here because it only works inside the section, not across the whole page forever.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, magni.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, magni.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, magni.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, magni.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, magni.</p>
+        </div>
+      </div>
+
+      <div class="content-section">
+        <div class="sticky-header header-3">JavaScript UI</div>
+        <div class="section-body">
+          <p>Another practical use is grouped content, such as alphabet contact lists or date-based schedules.</p>
+          <p>As users scroll, the current group heading stays visible at the top.</p>
+          <p>Then the next heading takes over when the next group starts.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, magni.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, magni.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, magni.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, magni.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, magni.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Example 2 -->
+    <h2 class="example-title">Example 2: Sticky Sidebar Navigation</h2>
+
+    <div class="layout">
+      <aside class="sidebar">
+        <h3>On this page</h3>
+        <a href="#part1">Introduction</a>
+        <a href="#part2">Why Sticky Is Useful</a>
+        <a href="#part3">Real Use Cases</a>
+        <a href="#part4">Things To Remember</a>
+      </aside>
+
+      <main class="article">
+        <section class="article-card" id="part1">
+          <h3>Introduction</h3>
+          <p>
+            Sticky sidebars are very common in blog pages, docs websites, admin dashboards,
+            course websites, and product pages.
+          </p>
+          <p>
+            The sidebar stays visible while reading, so users can navigate quickly without scrolling back up.
+          </p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil, officiis.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil, officiis.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil, officiis.</p>
+        </section>
+
+        <section class="article-card" id="part2">
+          <h3>Why Sticky Is Useful</h3>
+          <p>
+            Sticky improves usability because important navigation or context stays visible on screen.
+          </p>
+          <p>
+            Unlike fixed, sticky stays inside its parent area, so it feels more natural in many layouts.
+          </p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil, officiis.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil, officiis.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil, officiis.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil, officiis.</p>
+        </section>
+
+        <section class="article-card" id="part3">
+          <h3>Real Use Cases</h3>
+          <p>Documentation sidebar</p>
+          <p>Blog table of contents</p>
+          <p>Filters panel in e-commerce pages</p>
+          <p>Sticky summary card in pricing pages</p>
+          <p>Sticky category headers in long lists</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil, officiis.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil, officiis.</p>
+        </section>
+
+        <section class="article-card" id="part4">
+          <h3>Things To Remember</h3>
+          <p>
+            Sticky needs a value like <code>top: 0</code> or <code>top: 20px</code>.
+          </p>
+          <p>
+            It also depends on the parent container. If a parent has certain overflow settings,
+            sticky may not work as expected.
+          </p>
+          <p>
+            That is why sticky is best understood as: relative first, then fixed-like while scrolling,
+            but only inside its parent.
+          </p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil, officiis.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil, officiis.</p>
+        </section>
+      </main>
+    </div>
+
+    <div class="footer-space"></div>
+  </div>
+</body>
+</html>

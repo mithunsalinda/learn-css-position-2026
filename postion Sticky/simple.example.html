@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sticky Example</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+    }
+
+    .header {
+      background: #1d72d8;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .sticky-bar {
+      position: sticky;
+      top: 0;
+      background: orange;
+      padding: 15px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .content {
+      padding: 20px;
+      height: 1500px;
+      background: #f4f4f4;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">Top Section</div>
+
+  <div class="sticky-bar">I am sticky</div>
+
+  <div class="content">
+    <p>Scroll down to see the sticky bar.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+  </div>
+</body>
+</html>
